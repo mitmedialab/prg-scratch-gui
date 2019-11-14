@@ -23,6 +23,8 @@ before_install:
 install:
 - npm --production=false install
 - npm --production=false update
+- npm uninstall scratch-vm
+- npm install --save-dev bcjordan/scratch-vm#test-deploy
 before_script: greenkeeper-lockfile-update
 script:
 - npm test
@@ -79,7 +81,7 @@ deploy:
     condition: $TRAVIS_EVENT_TYPE != cron && ! $TRAVIS_BRANCH =~ ^greenkeeper/
     tags: false # Don't push tags to gh-pages
   skip_cleanup: true
-  script: npm uninstall scratch-vm && npm install --save-dev bcjordan/scratch-vm#test-deploy && npm run deploy -- -x -e $TRAVIS_BRANCH -r https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
+  script: npm run deploy -- -x -e $TRAVIS_BRANCH -r https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
 - provider: script
   on:
     branch: develop
