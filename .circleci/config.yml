@@ -51,6 +51,7 @@ jobs:
       - checkout
       - *restore_npm_cache
       - run: npm install
+      - run: npm uninstall scratch-vm && npm install --save-dev bcjordan/scratch-vm#test-deploy
       - *save_git_cache
       - *save_npm_cache
   lint:
@@ -162,7 +163,7 @@ jobs:
           git config --global user.email $(git log --pretty=format:"%ae" -n1)
           git config --global user.name $(git log --pretty=format:"%an" -n1)
       - run: npm run deploy -- -e $CIRCLE_BRANCH
-      
+
 workflows:
   version: 2
   build-test-deploy:
@@ -199,9 +200,9 @@ workflows:
       #           - master
       #           - develop
       #           - /^hotfix\/.*/
-      # - deploy-gh-pages:
-      #     requires:
-      #       - lint
-      #       - unit
-      #       - integration
-      #       - build
+       - deploy-gh-pages:
+           requires:
+             - lint
+             - unit
+             - integration
+             - build
