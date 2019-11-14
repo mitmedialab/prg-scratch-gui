@@ -50,6 +50,24 @@ export default [
     {
         name: (
             <FormattedMessage
+                defaultMessage="Import an Extension"
+                id="gui.extension.imported.name"
+            />
+        ),
+        iconURL: ev3InsetIconURL,
+        insetIconURL: ev3IconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Import extension given a URL"
+                id="gui.extension.imported.description"
+            />
+        ),
+        featured: true,
+        internetConnectionRequired: true
+    },
+    {
+        name: (
+            <FormattedMessage
                 defaultMessage="Music"
                 description="Name for the 'Music' extension"
                 id="gui.extension.music.name"
