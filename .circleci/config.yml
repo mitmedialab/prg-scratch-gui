@@ -187,6 +187,12 @@ workflows:
       - store_dist:
           requires:
             - build
+      - deploy-gh-pages:
+          requires:
+            - lint
+            - unit
+            - integration
+            - build
       # Disable deployment while running in parallel with Travis
       # - deploy-npm:
       #     requires:
@@ -200,9 +206,3 @@ workflows:
       #           - master
       #           - develop
       #           - /^hotfix\/.*/
-       - deploy-gh-pages:
-           requires:
-             - lint
-             - unit
-             - integration
-             - build
