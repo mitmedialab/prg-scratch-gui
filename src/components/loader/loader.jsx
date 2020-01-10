@@ -180,7 +180,7 @@ class LoaderComponent extends React.Component {
                                     className={styles.message}
                                     key={i}
                                 >
-                                    {m.message}
+                                    {'Brian test!'}
                                 </div>
                             ))}
                         </div>

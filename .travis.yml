@@ -23,6 +23,9 @@ before_install:
 install:
 - npm --production=false install
 - npm --production=false update
+- npm --production=false uninstall scratch-vm
+- npm --production=false install --save-dev bcjordan/scratch-vm#test-deploy
+- npm --production=false run build
 before_script: greenkeeper-lockfile-update
 script:
 - npm test
