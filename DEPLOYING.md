@@ -5,8 +5,6 @@
 
 scratch-vm is built using Travis CI. Travis is free for public repositories.
 
-
-
 ## Set up for scratch-gui
 
 scratch-gui is built using CircleCI, since it seems like the latest direction planned to be used upstream.
