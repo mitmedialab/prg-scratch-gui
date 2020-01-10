@@ -1,14 +1,20 @@
 
-# Multi-repo approach: deploying scratch-vm and -gui forks using Travis CI
+# Multi-repo approach: deploying scratch-vm and -gui forks using Travis/CircleCI
 
 ## Set up for scratch-vm
 
+scratch-vm is built using Travis CI. Travis is free for public repositories.
+
+
+
 ## Set up for scratch-gui
 
-1. Update package.json to reference your GitHub branch's version of scratch-vm
-2. Create a `GH_TOKEN` [following these steps](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line#creating-a-token)
+scratch-gui is built using CircleCI, since it seems like the latest direction planned to be used upstream.
+
+1. Update `.circleci/config.yml` to reference your GitHub branch's version of `scratch-vm`
+1. Enable builds for your fork at circleci.com (since the repo already has a `.circleci/config.yml`, you can ignore that part)
+1. Create a `GH_TOKEN` [following these steps](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line#creating-a-token)
     - Give it only `public_repo` permissions
-2. Enable builds for your
 
 # Monorepo Approach
 
