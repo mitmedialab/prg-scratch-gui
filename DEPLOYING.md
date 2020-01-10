@@ -14,7 +14,8 @@ scratch-gui is built using CircleCI, since it seems like the latest direction pl
 1. Update `.circleci/config.yml` to reference your GitHub branch's version of `scratch-vm`
 1. Enable builds for your fork at circleci.com (since the repo already has a `.circleci/config.yml`, you can ignore that part)
 1. Create a `GH_TOKEN` [following these steps](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line#creating-a-token)
-    - Give it only `public_repo` permissions
+    - Give it Repo permissions (first checkbox)
+1. Enter your GH_TOKEN on the CircleCI settings page as an Environment Variable
 
 # Monorepo Approach
 
